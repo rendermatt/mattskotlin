@@ -20,6 +20,10 @@ RUN ./gradlew --version
 # Build the application
 RUN ./gradlew build
 
+RUN ls -l
+
+RUN ls -l /app/build/libs
+
 # Copy the application JAR file into the container
 COPY build/libs/fullstack-jvm-1.0-SNAPSHOT.jar /app/
 

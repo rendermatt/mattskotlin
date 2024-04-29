@@ -108,15 +108,6 @@ fun Application.myApplicationModule() {
         get("/delete-user") {
             cryptrApiable.deleteUser(call)
         }
-        get("/applications") {
-            cryptrApiable.listApplications(call)
-        }
-        get("/create-application") {
-            cryptrApiable.createApplications(call)
-        }
-        get("/delete-application") {
-            cryptrApiable.deleteteApplications(call)
-        }
         get("/sso-connections") {
             cryptrApiable.listSsoConnections(call)
         }
@@ -126,18 +117,6 @@ fun Application.myApplicationModule() {
         get("/create-sso-connection") {
             println("routing")
             cryptrApiable.createSSOConnection(call)
-        }
-        get("/create-sso-admin-onboarding") {
-            cryptrApiable.createSsoAdminOnboarding(call)
-        }
-        get("/invite-sso-admin-onboarding") {
-            cryptrApiable.inviteAdminOnboarding(call)
-        }
-        get("/admin-onboarding") {
-            cryptrApiable.retrieveAdminOnboarding(call)
-        }
-        get("/reset-admin-onboarding") {
-            cryptrApiable.resetAdminOnboarding(call)
         }
         static("/static") {
             resources()

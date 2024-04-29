@@ -62,7 +62,15 @@ val Welcome = FC<WelcomeProps> { props ->
                 }
             }
             a {
-                href = "/create-organization?name=$name&allowed_email_domains[]=${name.replace(" ", "_")}.co"
+                href = "/create-organization?name=$name&allowed_email_domains[]=${
+                    name
+                        .replace(
+                            Regex("(.)(\\p{Upper})"),
+                            "$1-$2"
+                        )
+                        .replace(Regex("\\s+"), "-")
+                        .toLowerCase()
+                }.co"
                 css {
 //                    width = 25.px
 //                    height = 25.px

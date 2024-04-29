@@ -18,7 +18,7 @@ external interface WelcomeProps : Props {
 val Welcome = FC<WelcomeProps> { props ->
     var name by useState(props.name)
     var orgDomain by useState(props.orgDomain)
-    var userEmail by useState(props.userEmail)
+    //var userEmail by useState(props.userEmail)
 
     div {
         div {
@@ -69,7 +69,7 @@ val Welcome = FC<WelcomeProps> { props ->
                             "$1-$2"
                         )
                         .replace(Regex("\\s+"), "-")
-                        .toLowerCase()
+                        .lowercase()
                 }.co"
                 css {
 //                    width = 25.px

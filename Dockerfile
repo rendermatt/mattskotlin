@@ -3,7 +3,7 @@ FROM adoptopenjdk:11-jre-hotspot
 
 # Set the working directory inside the container
 WORKDIR /app
-
+RUN touch foo.bar
 RUN pwd
 RUN ls -l
 

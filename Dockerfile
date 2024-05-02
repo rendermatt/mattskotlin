@@ -4,6 +4,9 @@ FROM adoptopenjdk:11-jre-hotspot
 # Set the working directory inside the container
 WORKDIR /app
 
+RUN pwd
+RUN ls -l
+
 # Copy the Gradle wrapper files
 COPY gradlew ./
 COPY gradle ./gradle

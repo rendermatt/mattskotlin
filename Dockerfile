@@ -3,6 +3,7 @@ FROM adoptopenjdk:11-jre-hotspot
 
 # Set the working directory inside the container
 WORKDIR /app
+
 RUN touch foo.bar
 RUN pwd
 RUN ls -l
@@ -28,7 +29,8 @@ RUN ls -l
 RUN ls -l /app/build/libs
 
 # Copy the application JAR file into the container
-COPY build/libs/fullstack-jvm-1.0-SNAPSHOT.jar /app/
+RUN cp ./build/libs/fullstack-jvm-1.0-SNAPSHOT.jar ./
+#COPY build/libs/fullstack-jvm-1.0-SNAPSHOT.jar /app/
 
 # Set the command to run the application
 CMD ["java", "-jar", "fullstack-jvm-1.0-SNAPSHOT.jar"]
